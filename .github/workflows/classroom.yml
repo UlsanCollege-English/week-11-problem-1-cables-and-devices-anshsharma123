@@ -20,7 +20,7 @@ jobs:
         with:
           timeout: 10
           # Ensure the repository root is on PYTHONPATH so tests can import the local package
-          setup-command: 'export PYTHONPATH=.:'
+          setup-command: "export PYTHONPATH=${{ github.workspace }}"
       - name: Autograding Reporter
         uses: classroom-resources/autograding-grading-reporter@v1
         env:
