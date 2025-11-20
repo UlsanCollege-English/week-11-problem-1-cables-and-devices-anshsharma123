@@ -19,7 +19,8 @@ jobs:
         uses: classroom-resources/autograding-python-grader@v1
         with:
           timeout: 10
-          setup-command: ''
+          # Ensure the repository root is on PYTHONPATH so tests can import the local package
+          setup-command: 'export PYTHONPATH=.:'
       - name: Autograding Reporter
         uses: classroom-resources/autograding-grading-reporter@v1
         env:
